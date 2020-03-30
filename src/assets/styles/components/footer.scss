@@ -1,0 +1,14 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  a {
+    font-size: 0.8125rem;
+    padding: 0.25rem 0.5rem;
+    font-weight: 300;
+    &.writer {
+      font-weight: 600;
+    }
+  }
+}
