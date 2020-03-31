@@ -26,7 +26,7 @@ export class Home extends Component {
           <div className="container">
             <div className="main-menu">
               <div className="row">
-                <div className="col-md-3 col-xs-6">
+                <div className="col-md-3 col-sm-6">
                   <Link to="/shop" className="menu-cover">
                     <div className="menu"></div>
                     <div className="content">
@@ -35,7 +35,7 @@ export class Home extends Component {
                     </div>
                   </Link>
                 </div>
-                <div className="col-md-3 col-xs-6">
+                <div className="col-md-3 col-sm-6">
                   <Link to="/shop" className="menu-cover">
                     <div className="menu"></div>
                     <div className="content">
@@ -44,7 +44,7 @@ export class Home extends Component {
                     </div>
                   </Link>
                 </div>
-                <div className="col-md-3 col-xs-6">
+                <div className="col-md-3 col-sm-6">
                   <Link to="/shop" className="menu-cover">
                     <div className="menu"></div>
                     <div className="content">
@@ -53,7 +53,7 @@ export class Home extends Component {
                     </div>
                   </Link>
                 </div>
-                <div className="col-md-3 col-xs-6">
+                <div className="col-md-3 col-sm-6">
                   <Link to="/shop" className="menu-cover">
                     <div className="menu"></div>
                     <div className="content">
@@ -68,6 +68,128 @@ export class Home extends Component {
               <div className="ads">
                 <div className="ads-banner">
                   <h2 className="tag">10% on all Oasis</h2>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="categories">
+                <div className="title">2020 Collections</div>
+                <div className="collections">
+                  <div className="collection">
+                    <div className="tile">Featured</div>
+                    <ul>
+                      <li>
+                        <Link to="/shop">exercise</Link>
+                      </li>
+                      <li>
+                        <Link to="shop">running</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sneakers</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sneakers</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sport</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">swim-equipment</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="collection">
+                    <div className="tile">Top</div>
+                    <ul>
+                      <li>
+                        <Link to="/shop">exercise</Link>
+                      </li>
+                      <li>
+                        <Link to="shop">running</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sneakers</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sneakers</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sport</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">swim-equipment</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="collection">
+                    <div className="tile">Women</div>
+                    <ul>
+                      <li>
+                        <Link to="/shop">exercise</Link>
+                      </li>
+                      <li>
+                        <Link to="shop">running</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sneakers</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sneakers</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sport</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">swim-equipment</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="collection">
+                    <div className="tile">Children</div>
+                    <ul>
+                      <li>
+                        <Link to="/shop">exercise</Link>
+                      </li>
+                      <li>
+                        <Link to="shop">running</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sneakers</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sneakers</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sport</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">swim-equipment</Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="collection">
+                    <div className="tile">Men</div>
+                    <ul>
+                      <li>
+                        <Link to="/shop">exercise</Link>
+                      </li>
+                      <li>
+                        <Link to="shop">running</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sneakers</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sneakers</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">sport</Link>
+                      </li>
+                      <li>
+                        <Link to="/shop">swim-equipment</Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
