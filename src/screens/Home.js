@@ -23,6 +23,55 @@ export class Home extends Component {
               </div>
             </div>
           </div>
+          <div className="container">
+            <div className="main-menu">
+              <div className="row">
+                <div className="col-md-3 col-xs-6">
+                  <Link to="/shop" className="menu-cover">
+                    <div className="menu"></div>
+                    <div className="content">
+                      <h2 className="title">Tracksuits</h2>
+                      <span className="subtitle">shop now</span>
+                    </div>
+                  </Link>
+                </div>
+                <div className="col-md-3 col-xs-6">
+                  <Link to="/shop" className="menu-cover">
+                    <div className="menu"></div>
+                    <div className="content">
+                      <h2 className="title">Tracksuits</h2>
+                      <span className="subtitle">shop now</span>
+                    </div>
+                  </Link>
+                </div>
+                <div className="col-md-3 col-xs-6">
+                  <Link to="/shop" className="menu-cover">
+                    <div className="menu"></div>
+                    <div className="content">
+                      <h2 className="title">Tracksuits</h2>
+                      <span className="subtitle">shop now</span>
+                    </div>
+                  </Link>
+                </div>
+                <div className="col-md-3 col-xs-6">
+                  <Link to="/shop" className="menu-cover">
+                    <div className="menu"></div>
+                    <div className="content">
+                      <h2 className="title">Tracksuits</h2>
+                      <span className="subtitle">shop now</span>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="ads">
+                <div className="ads-banner">
+                  <h2 className="tag">10% on all Oasis</h2>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <Footer />
       </>
