@@ -108,6 +108,38 @@
       }
     }
   }
+
+  .arrivals {
+    margin: 3rem auto;
+    .arrival {
+      border-radius: 0.25rem;
+      background-image: url('../../images/tenniss.jpg');
+      background-blend-mode: overlay;
+      background-color: hsla(0, 0%, 19%, 0.150);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .arrival-item {
+        padding: 0.5rem 2rem;
+        color: #FFF;
+        text-shadow: 2px 2px 3px #000;
+        h2 {
+          font-size: 1.75rem;
+          font-weight: 500;
+          width: 70%;
+        }
+        p {
+          font-size: 0.875rem;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
   .categories {
     width: 100%;
     padding: 0 0.5rem;
@@ -116,22 +148,31 @@
       font-weight: 700;
       color: #222;
       margin-bottom: 1.5rem;
+      &:after {
+        content: ' ';
+        display: block;
+        width: 1rem;
+        height: 0.25rem;
+        background-color: #c8ff0b;
+      }
     }
     .collections {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       .collection {
+        margin-bottom: 1.5rem;
         .tile {
           font-size: 1rem;
           font-weight: 300;
           text-transform: uppercase;
           position: relative;
+          margin-bottom: 0.75rem;
           &:after {
-            content: '';
+            content: ' ';
             display: block;
-            width: 0;
-            height: 3px;
+            width: 0.75rem;
+            height: 0.125rem;
             background-color: #c8ff0b;
             position: absolute;
             top: 100%;
@@ -144,7 +185,7 @@
           li {
             a {
               color: #333;
-              font-size: 0.75rem;
+              font-size: 0.8125rem;
               &:hover {
                 text-decoration: underline;
               }

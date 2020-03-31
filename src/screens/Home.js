@@ -64,6 +64,26 @@ export class Home extends Component {
                 </div>
               </div>
             </div>
+            <div className="arrivals">
+              <div className="row">
+                <div className="col-lg-6">
+                  <div className="arrival">
+                    <div className="arrival-item">
+                      <h2>New Arrivals</h2>
+                      <p>shop best swimming equipment</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-6">
+                  <div className="arrival">
+                    <div className="arrival-item">
+                      <h2>Summer sales</h2>
+                      <p>experience the power of nike</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="row">
               <div className="ads">
                 <div className="ads-banner">
