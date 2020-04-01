@@ -88,6 +88,7 @@ ul.coll {
 		display: none !important;
 	}
 }
+
 .searchbar {
 	display: flex;
 	justify-content: flex-start;
@@ -103,7 +104,25 @@ ul.coll {
 		top: 0.75rem;
 	}
 }
-
+.pagination {
+	display: flex;
+	justify-content: flex-end;
+	margin: 1.25rem 0 2rem;
+	a {
+		display: block;
+		color: #fff;
+		background-color: #333;
+		border: 1px solid #333;
+		margin-right: 0.5rem;
+		padding: 0.5rem 0.875rem;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			background: #fff;
+			color: #333;
+			border: 1px solid #333;
+		}
+	}
+}
 .slide-in {
 	position: relative;
 	animation: slideIn 300ms cubic-bezier(0.4, 0, 0.2, 1);

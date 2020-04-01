@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Filter from '../components/Filter';
+import Pagination from '../components/Pagination';
 import '../assets/styles/screens/shop.scss';
 import { sideColl, shopSorting } from '../constants/mock';
 import Collections from '../components/Collections';
@@ -202,6 +203,7 @@ export class Shop extends Component {
                     </div>
                   </div>
                 </div>
+                <Pagination />
               </div>
             </div>
           </div>
