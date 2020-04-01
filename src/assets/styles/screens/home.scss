@@ -42,7 +42,6 @@
       background-size: cover;
       overflow: hidden;
       .menu {
-        background-image: url('../../images/shop-1.jpg');
         width: 100%;
         height: 100%;
         background-color: hsla(0, 0%, 100%, 0.33);
@@ -177,19 +176,6 @@
             position: absolute;
             top: 100%;
             left: 0;
-          }
-        }
-        ul {
-          list-style: none;
-          padding-left: 0.125rem;
-          li {
-            a {
-              color: #333;
-              font-size: 0.8125rem;
-              &:hover {
-                text-decoration: underline;
-              }
-            }
           }
         }
       }

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import '../assets/styles/screens/home.scss';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Collections from '../components/Collections';
 import { menuItems, arrivals, categories, collections } from '../constants/mock';
 
 export class Home extends Component {
@@ -12,9 +13,9 @@ export class Home extends Component {
     return (
       <div className="col-md-3 col-sm-6" key={index}>
         <Link to="/shop" className="menu-cover">
-          <div className="menu"></div>
+          <div className="menu" style={{ backgroundImage: `url(${item.bg})` }}></div>
           <div className="content">
-            <h2 className="title">{item}</h2>
+            <h2 className="title">{item.title}</h2>
             <span className="subtitle">shop now</span>
           </div>
         </Link>
@@ -39,11 +40,7 @@ export class Home extends Component {
     return (
       <div className="collection" key={i}>
         <div className="tile">{cat}</div>
-        <ul>
-          {coll.map(col => (
-            <li><Link to="/shop">{col}</Link></li>
-          ))}
-        </ul>
+        <Collections coll={coll} />
       </div>
 
     )

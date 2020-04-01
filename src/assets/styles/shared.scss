@@ -58,6 +58,27 @@ a {
 	}
 }
 
+ul.coll {
+	list-style: none;
+	padding-left: 0.125rem;
+	&.large {
+		li a {
+			font-size: 0.935rem;
+		}
+	}
+	li {
+		margin-bottom: 0.25rem;
+		a {
+			color: #333;
+			font-size: 0.8125rem;
+			letter-spacing: 0.5px;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
 .slide-in {
 	position: relative;
 	animation: slideIn 300ms cubic-bezier(0.4, 0, 0.2, 1);
