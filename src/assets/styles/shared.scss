@@ -78,6 +78,31 @@ ul.coll {
 		}
 	}
 }
+.large-screens-only {
+	@media(max-width: 991px) {
+		display: none !important;
+	}
+}
+.small-screens-only {
+	@media(min-width: 992px) {
+		display: none !important;
+	}
+}
+.searchbar {
+	display: flex;
+	justify-content: flex-start;
+	position: relative;
+	input {
+		width: 99%;
+	}
+	img {
+		width: 18px;
+		height: 18px;
+		position: absolute;
+		right: 1rem;
+		top: 0.75rem;
+	}
+}
 
 .slide-in {
 	position: relative;

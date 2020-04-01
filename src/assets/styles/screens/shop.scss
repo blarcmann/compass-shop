@@ -33,21 +33,6 @@
   }
   .sidebar {
     padding: 1rem;
-    .searchbar {
-      display: flex;
-      justify-content: flex-start;
-      position: relative;
-      input {
-        width: 99%;
-      }
-      img {
-        width: 18px;
-        height: 18px;
-        position: absolute;
-        right: 1rem;
-        top: 0.75rem;
-      }
-    }
     .categories {
       margin-top: 2rem;
       .title {
@@ -66,19 +51,23 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 1rem;
-    .result {
-      letter-spacing: 0.5px;
-      font-size: 0.935rem;
-    }
     .sorting{
       select {
         -webkit-appearance: none;
       }
     }
   }
+  .page-result {
+      letter-spacing: 0.5px;
+      font-size: 0.75rem;
+      @media(min-width: 992px) {
+        font-size: 0.935rem;
+      }
+    }
   .products {
+    margin-top: 1.5rem;
     .product {
-     width: 95%;
+    //  width: 95%;
      margin: 0 auto 1.25rem;
       &:hover {
         cursor: pointer;

@@ -1,8 +1,10 @@
 const collections = ['exercise', 'running', 'sneakers', 'sport', 'swim - equipment'];
 const categories = ['featured', 'top', 'women', 'children', 'men'];
 const sideColl = [
-  'Exercise', 'Girls', 'Running', 'Ski', 'Ski Jacket', 'Sneakers', 'Sport', 'Swim Equipment', 'Swimming', 'Uncategorized', 'Urban', 'Variations'
+  'All', 'Exercise', 'Girls', 'Running', 'Ski', 'Ski Jacket', 'Sneakers', 'Sport', 'Swim Equipment',
+  'Swimming', 'Uncategorized', 'Urban', 'Variations'
 ];
+const shopSorting = ['Default sorting', 'Sort by newness', 'by average rating', 'by popularity', 'by price: low - high'];
 const menuItems = [
   {
     bg: 'https://i.ibb.co/mSMwHyy/menu-1.jpg',
@@ -35,7 +37,7 @@ const arrivals = [
   },
 ]
 
-export { menuItems, arrivals, collections, categories, sideColl }
+export { menuItems, arrivals, collections, categories, sideColl, shopSorting }
 
 // https://i.ibb.co/WyH2H3n/arrivals-a.jpg - arrv
 // https://i.ibb.co/q96Pm4V/swimming-1.jpg - arrv
