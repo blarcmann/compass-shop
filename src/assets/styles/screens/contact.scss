@@ -2,20 +2,7 @@
   width: 95%;
   margin: 3rem auto;
   min-height: 80vh;
-  .title {
-    font-size: 2.75rem;
-    font-weight: 700;
-    color: #222;
-    text-transform: uppercase;
-    margin-bottom: 5rem;
-      &:after {
-        content: ' ';
-        display: block;
-        width: 3rem;
-        height: 0.45rem;
-        background-color: #c8ff0b;
-      }
-  }
+  // padding-top: 1rem;
   .to-know {
     margin-top: 1rem;
     h1 {
@@ -64,7 +51,7 @@
   .form {
     input, textarea {
       width: 98%;
-      height: 40px;
+      height: 44px;
       border: 1px solid #333;
       color: #333;
       font-size: 0.875rem;

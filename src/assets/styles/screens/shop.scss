@@ -11,26 +11,6 @@
     padding: 0.25rem 0.75rem;
     height: 40px;
   }
-  .heading {
-    width: 100%;
-    margin: 2rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    .title {
-      text-transform: uppercase;
-      font-size: 3rem;
-      font-weight: 800;
-    }
-    .br-crumb {
-      color: #555;
-      span {
-        color: #222;
-        margin: 0 0.25rem;
-      }
-    }
-  }
   .sidebar {
     padding: 1rem;
     .categories {
@@ -67,7 +47,7 @@
   .products {
     margin: 1.5rem 0;
     .product {
-    //  width: 95%;
+    display: block;
      margin: 0 auto 1.25rem;
       &:hover {
         cursor: pointer;

@@ -2,6 +2,9 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../assets/styles/screens/contact.scss';
+import PageBreadcrumb from '../components/Page-breadcrumb';
+
+const paths = ['home', 'contact'];
 
 export default function Contact() {
   return (
@@ -9,7 +12,9 @@ export default function Contact() {
       <Header />
       <div className="contact">
         <div className="container-fluid">
-          <h1 className="title">Contact us</h1>
+          <div className="row">
+            <PageBreadcrumb paths={paths} title="Contact" />
+          </div>
           <div className="row">
             <div className="col-md-6">
               <div className="to-know">
@@ -36,7 +41,7 @@ export default function Contact() {
                 <input type="text" placeholder="Name" className="form-item" />
                 <input type="email" placeholder="Email" className="form-item" />
                 <textarea rows="5" placeholder="what's poppin'"></textarea>
-                <button to="/shop" className="bttn primary">shop now</button>
+                <button to="/shop" className="bttn primary">send now</button>
               </div>
             </div>
           </div>

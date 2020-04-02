@@ -9,24 +9,17 @@ import '../assets/styles/screens/shop.scss';
 import { sideColl, shopSorting } from '../constants/mock';
 import Collections from '../components/Collections';
 import Searchbar from '../components/Searchbar';
+import PageBreadcrumb from '../components/Page-breadcrumb';
 
 export class Shop extends Component {
   render() {
+    const paths = ['home', 'shop'];
     return (
       <>
         <Header />
         <div className="shop">
           <div className="container-fluid">
-            <div className="row">
-              <div className="heading">
-                <h1 className="title">Shop</h1>
-                <div className="br-crumb">
-                  <Link to="/">home</Link>
-                  <span>/</span>
-                  <Link to="/shop">shop</Link>
-                </div>
-              </div>
-            </div>
+            <PageBreadcrumb paths={paths} title="Shop" />
             <div className="row">
               <div className="col-lg-3">
                 <div className="sidebar">
@@ -52,7 +45,7 @@ export class Shop extends Component {
                 <div className="products">
                   <div className="row">
                     <div className="col-md-4">
-                      <div className="product">
+                      <Link to="product/1234567" className="product">
                         <div className="view">
                           <img src={require('../assets/images/menu-4.jpg')} alt="*" />
                           <button className="add slide-in">Add to cart</button>
@@ -61,7 +54,7 @@ export class Shop extends Component {
                           <div className="name">Bottle bag</div>
                           <div className="price">$59</div>
                         </div>
-                      </div>
+                      </Link>
                     </div>
                     <div className="col-md-4">
                       <div className="product">
