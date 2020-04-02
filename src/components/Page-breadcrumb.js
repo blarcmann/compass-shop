@@ -7,6 +7,10 @@ export default function PageBreadcrumb({ title, paths }) {
       <div className="brc-content">
         <h1 className="title">{title}</h1>
         <div className="br-crumb">
+          <span>
+            <Link to="/home">home</Link>
+            <span className="divider">/</span>
+          </span>
           {paths.map((path, index) => (
             <span key={index}>
               <Link to={`${path}`}>{path}</Link>

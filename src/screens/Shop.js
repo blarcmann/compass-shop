@@ -13,7 +13,7 @@ import PageBreadcrumb from '../components/Page-breadcrumb';
 
 export class Shop extends Component {
   render() {
-    const paths = ['home', 'shop'];
+    const paths = ['shop'];
     return (
       <>
         <Header />

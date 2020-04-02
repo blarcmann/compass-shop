@@ -7,7 +7,7 @@ import '../assets/styles/screens/product-details.scss';
 
 export class ProductDetails extends Component {
   render() {
-    const paths = ['home', 'product']
+    const paths = ['product']
     return (
       <>
         <Header />

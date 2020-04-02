@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import '../assets/styles/screens/contact.scss';
 import PageBreadcrumb from '../components/Page-breadcrumb';
 
-const paths = ['home', 'contact'];
+const paths = ['contact'];
 
 export default function Contact() {
   return (
