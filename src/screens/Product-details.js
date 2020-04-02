@@ -17,41 +17,43 @@ export class ProductDetails extends Component {
               <PageBreadcrumb paths={paths} title="Contact" />
             </div>
             <div className="row">
-              <div className="col-lg-8">
-                <div className="parts">
-                  <div className="each-part">
-                    <img src={require('../assets/images/part-a.jpg')} alt="#" />
+              <div className="col-xl-8">
+                <div className="gallery">
+                  <div className="parts">
+                    <div className="each-part">
+                      <img src={require('../assets/images/part-a.jpg')} alt="#" />
+                    </div>
+                    <div className="each-part">
+                      <img src={require('../assets/images/part-b.jpg')} alt="#" />
+                    </div>
+                    <div className="each-part">
+                      <img src={require('../assets/images/part-c.jpg')} alt="#" />
+                    </div>
                   </div>
-                  <div className="each-part">
-                    <img src={require('../assets/images/part-b.jpg')} alt="#" />
+                  <div className="full">
+                    <img src={require('../assets/images/full-product-image.jpg')} alt="#" />
                   </div>
-                  <div className="each-part">
-                    <img src={require('../assets/images/part-c.jpg')} alt="#" />
-                  </div>
-                </div>
-                <div className="full">
-                  <img src={require('../assets/images/full-product-image.jpg')} alt="#" />
                 </div>
               </div>
-              <div className="col-lg-4">
+              <div className="col-xl-4">
                 <div className="product-data">
-                  <div className="name">LEGGINGS GRAY</div>
+                  <h2 className="name">LEGGINGS GRAY</h2>
                   <div className="price">$56</div>
                   <div className="rating">
                     {new Array(4).fill('***').map((item, index) => (<span className="stars" key={index}>★</span>))}
                   </div>
-                  <div className="desc">Creating the balance of elegance and flexibility. 100% Beatrix cutton, wired absolutely to the x-axis for ease base</div>
+                  <p className="description">Creating the balance of elegance and flexibility. 100% Beatrix cutton, wired absolutely to the x-axis for ease base</p>
                   <ul className="others">
                     <li>
-                      <span className="tag">SKU</span>
+                      <span className="tag">SKU: </span>
                       <span className="value">22</span>
                     </li>
                     <li>
-                      <span className="tag">Category</span>
+                      <span className="tag">Category: </span>
                       <span className="value">Sport</span>
                     </li>
                     <li>
-                      <span className="tag">Tags</span>
+                      <span className="tag">Tags: </span>
                       <span className="value">Equipments, Water</span>
                     </li>
                   </ul>

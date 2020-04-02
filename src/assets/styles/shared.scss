@@ -36,6 +36,9 @@ body {
 	}
 	.br-crumb {
 		color: #555;
+		@media(max-width: 600px) {
+			font-size: 0.75rem;
+		}
 		span.divider {
 			color: #222;
 			margin: 0 0.125rem;
