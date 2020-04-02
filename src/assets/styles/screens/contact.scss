@@ -1,0 +1,82 @@
+.contact {
+  width: 95%;
+  margin: 3rem auto;
+  min-height: 80vh;
+  .title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    color: #222;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+      &:after {
+        content: ' ';
+        display: block;
+        width: 3rem;
+        height: 0.45rem;
+        background-color: #c8ff0b;
+      }
+  }
+  .to-know {
+    margin-top: 1rem;
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #222;
+      line-height: 40px;
+      margin-bottom: 1.25rem;
+      &:after {
+        content: ' ';
+        display: block;
+        width: 1.5rem;
+        height: 0.25rem;
+        background-color: #c8ff0b;
+      }
+    }
+    p {
+      color: #555;
+      font-weight: lighter;
+      font-size: 0.876rem;
+    }
+    ul.connect {
+      padding-left: 0;
+      margin: 2rem 0 1rem;
+      li {
+        // letter-spacing: 0.5px;
+        list-style: none;
+        font-style: italic;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 1rem;
+        img, span {display: block;}
+        img {
+          width: 18px;
+          height: 18px;
+          margin-right: 0.5rem;
+        }
+        span {
+          font-size: 0.935rem;
+          color: #223322;
+        }
+      }
+    }
+  }
+  .form {
+    input, textarea {
+      width: 98%;
+      height: 40px;
+      border: 1px solid #333;
+      color: #333;
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      margin: 1.5rem auto 0;
+      @media(min-width: 992px) {
+        width: 80%;
+      }
+    }
+    textarea {
+      height: 200px;
+      margin-bottom: 1.5rem;
+    }
+  }
+}

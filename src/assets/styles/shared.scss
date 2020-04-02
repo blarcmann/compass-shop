@@ -19,7 +19,7 @@ body {
 		display: none !important;
 }
 
-input, button, select {
+input, button, select, textarea {
 	&:active, &:focus {
 		outline: none;
 	}
