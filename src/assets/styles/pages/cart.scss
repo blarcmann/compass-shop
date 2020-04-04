@@ -64,7 +64,8 @@
   .totals {
     padding: 1.5rem;
     border: 0.5px solid #262626;
-    @media(min-width: 768px) {
+    margin-top: 3rem;
+    @media(min-width: 992px) {
       width: 90%;
       margin: auto;
       padding: 2.5rem;

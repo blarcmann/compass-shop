@@ -72,7 +72,10 @@ export class Cart extends Component {
                     </div>
                   </div>
                   <div className="back">
-                    <Link to="/shop" className="bttn primary">Back to shop</Link>
+                    <Link to="/shop" className="bttn primary">
+                      <img src={require('../assets/images/back.svg')} className="left" alt="" />
+                      Back to shop
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -48,7 +48,10 @@ export class Shop extends Component {
                       <Link to="product/1234567" className="product">
                         <div className="view">
                           <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add slide-in">Add to cart</button>
+                          <button className="add slide-in">
+                            <img src={require('../assets/images/cart.svg')} alt="*" />
+                            Add to cart
+                          </button>
                         </div>
                         <div className="detail">
                           <div className="name">Bottle bag</div>
