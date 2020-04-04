@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import '../assets/styles/screens/home.scss';
+import '../assets/styles/pages/home.scss';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Collections from '../components/Collections';

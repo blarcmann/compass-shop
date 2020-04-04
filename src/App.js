@@ -1,17 +1,19 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from './screens/Home';
-import Shop from './screens/Shop';
-import Contact from './screens/Contact';
-import ProductDetails from './screens/Product-details';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
+import Contact from './pages/Contact';
+import Cart from './pages/Cart';
+import ProductDetails from './pages/Product-details';
 
 function App() {
   return (
     <Switch>
       <Route path='/' exact component={Home} />
-      <Route path='/shop' exact component={Shop} />
-      <Route path='/contact' exact component={Contact} />
-      <Route path='/product/:id' exact component={ProductDetails} />
+      <Route path='/shop' component={Shop} />
+      <Route path='/contact' component={Contact} />
+      <Route path='/product/:id' component={ProductDetails} />
+      <Route path="/cart" component={Cart} />
       <Route path='**' component={Home} />
     </Switch>
   );

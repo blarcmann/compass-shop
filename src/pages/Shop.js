@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Filter from '../components/Filter';
 import Pagination from '../components/Pagination';
-import '../assets/styles/screens/shop.scss';
+import '../assets/styles/pages/shop.scss';
 import { sideColl, shopSorting } from '../constants/mock';
 import Collections from '../components/Collections';
 import Searchbar from '../components/Searchbar';

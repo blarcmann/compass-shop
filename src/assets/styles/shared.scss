@@ -36,12 +36,10 @@ body {
 	}
 	.br-crumb {
 		color: #555;
-		@media(max-width: 600px) {
-			font-size: 0.75rem;
-		}
+		font-size: 0.75rem;
 		span.divider {
 			color: #222;
-			margin: 0 0.125rem;
+			margin: 0 0.25rem;
 		}
 	}
 }
@@ -56,9 +54,10 @@ input, button, select, textarea {
 	}
 }
 a {
-	color: #333;
+	color: #444;
 	&:hover {
 		text-decoration: none;
+		color: #000;
 	}
 }
 
@@ -75,12 +74,26 @@ a {
 	justify-content: center;
 	cursor: pointer;
 	padding: 0px 25px;
-	border-radius: 0.25rem;
 	transition: all 0.5s ease 0s;
 	text-decoration: none;
+	img {
+		width: 16px;
+    height: 16px;
+    position: relative;
+    top: 0.875rem;
+    margin-left: 1rem;
+	}
 	&.primary {
 		color: white;
 		background-color: rgb(15, 22, 28);
+	}
+	&.secondary {
+		background-color: #c8ff0b;
+		color: #262626;
+		max-width: max-content;
+		font-weight: 800;
+		margin: auto;
+		border: none;
 	}
 	&:hover {
 		background-color: white;

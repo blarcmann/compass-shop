@@ -25,7 +25,7 @@ export default function Header() {
               <div className="menu-item"><Link to="/contact">Contact</Link></div>
               <div className="menu-item"><Link to="/sign-in">Sign In</Link></div>
               <div className="menu-item">
-                <Link to="/sign-in" className="cart">
+                <Link to="/cart" className="cart">
                   <img src={require('../assets/images/shopping-cart.svg')} alt="@" />
                   <span>4</span>
                 </Link>
@@ -52,7 +52,7 @@ export default function Header() {
             <div className="menu-item"><Link to="/contact">Contact</Link></div>
             <div className="menu-item"><Link to="/sign-in">Sign In</Link></div>
             <div className="menu-item">
-              <Link to="/sign-in" className="cart">
+              <Link to="/cart" className="cart">
                 <img src={require('../assets/images/shopping-cart.svg')} alt="@" />
                 <span>4</span>
               </Link>

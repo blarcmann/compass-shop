@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import '../assets/styles/screens/contact.scss';
+import '../assets/styles/pages/contact.scss';
 import PageBreadcrumb from '../components/Page-breadcrumb';
 
 const paths = ['contact'];

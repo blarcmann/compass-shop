@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PageBreadcrumb from '../components/Page-breadcrumb';
-import '../assets/styles/screens/product-details.scss';
+import '../assets/styles/pages/product-details.scss';
 
 export class ProductDetails extends Component {
   render() {
