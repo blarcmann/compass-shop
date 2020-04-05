@@ -48,22 +48,4 @@
       }
     }
   }
-  .form {
-    input, textarea {
-      width: 98%;
-      height: 44px;
-      border: 1px solid #333;
-      color: #333;
-      font-size: 0.875rem;
-      padding: 0.5rem 1rem;
-      margin: 1.5rem auto 0;
-      @media(min-width: 992px) {
-        width: 80%;
-      }
-    }
-    textarea {
-      height: 200px;
-      margin-bottom: 1.5rem;
-    }
-  }
 }

@@ -40,7 +40,7 @@ export default function Contact() {
               <div className="form">
                 <input type="text" placeholder="Name" className="form-item" />
                 <input type="email" placeholder="Email" className="form-item" />
-                <textarea rows="5" placeholder="what's poppin'"></textarea>
+                <textarea rows="5" placeholder="what's poppin'" className="form-item"></textarea>
                 <button to="/shop" className="bttn primary">send now</button>
               </div>
             </div>

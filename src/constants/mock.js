@@ -1,3 +1,4 @@
+const BASE_URL = 'http://localhost:3001';
 const collections = ['exercise', 'running', 'sneakers', 'sport', 'swim - equipment'];
 const categories = ['featured', 'top', 'women', 'children', 'men'];
 const sideColl = [
@@ -37,7 +38,7 @@ const arrivals = [
   },
 ]
 
-export { menuItems, arrivals, collections, categories, sideColl, shopSorting }
+export { menuItems, arrivals, collections, categories, sideColl, shopSorting, BASE_URL }
 
 // https://i.ibb.co/WyH2H3n/arrivals-a.jpg - arrv
 // https://i.ibb.co/q96Pm4V/swimming-1.jpg - arrv
