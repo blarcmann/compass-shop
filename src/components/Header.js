@@ -24,6 +24,7 @@ export default function Header() {
               <div className="menu-item"><Link to="/shop">Shop</Link></div>
               <div className="menu-item"><Link to="/contact">Contact</Link></div>
               <div className="menu-item"><Link to="/sign-in">Sign In</Link></div>
+              <div className="menu-item"><Link to="/add-product">Create Product</Link></div>
               <div className="menu-item">
                 <Link to="/cart" className="cart">
                   <img src={require('../assets/images/shopping-cart.svg')} alt="@" />

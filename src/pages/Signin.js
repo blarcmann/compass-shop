@@ -16,7 +16,6 @@ export class Signin extends Component {
 
   handleChange = (key, value) => {
     this.setState({ [key]: value })
-    console.log(this.state);
   }
 
   setActiveTab = (tab) => {
