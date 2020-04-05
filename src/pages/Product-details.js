@@ -14,7 +14,7 @@ export class ProductDetails extends Component {
         <div className="product-details">
           <div className="container-fluid">
             <div className="row">
-              <PageBreadcrumb paths={paths} title="Contact" />
+              <PageBreadcrumb paths={paths} title="Product" />
             </div>
             <div className="row">
               <div className="col-xl-8">

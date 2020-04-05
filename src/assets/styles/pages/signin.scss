@@ -1,0 +1,37 @@
+.signin {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  .sign-up-in {
+    min-height: 66vh;
+    padding-top: 2.25rem;
+    text-align: center;
+  }
+  .tabbed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .tab {
+      cursor: pointer;
+      font-weight: 500;
+      color: #888;
+      transition: all 0.25s ease-in-out;
+      border-bottom: 2px solid #FFFFFF;
+      margin-right: 1.75rem;
+      &:hover, &.active {
+        color: #262626;
+        font-weight: 800;
+        border-bottom: 2px solid #262626;
+      }
+
+    }
+  }
+  .submit {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+  }
+  input.form-item {
+    width: 99%;
+  }
+}

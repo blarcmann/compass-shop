@@ -5,6 +5,7 @@ import Shop from './pages/Shop';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import ProductDetails from './pages/Product-details';
+import Signin from './pages/Signin';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path='/contact' component={Contact} />
       <Route path='/product/:id' component={ProductDetails} />
       <Route path="/cart" component={Cart} />
+      <Route path="/sign-in" component={Signin} />
       <Route path='**' component={Home} />
     </Switch>
   );

@@ -1,8 +1,9 @@
 import { SIGN_UP } from '../constants';
 import axios from 'axios';
-const url = `${globals.BASE_URL}/users`;
+import { BASE_URL } from '../constants/mock';
+const url = `${BASE_URL}/users`;
 
-export function register(props, payload) {
+export function signin(props, payload) {
   return (dispatch) => {
     axios.post(`${url}/register`, payload)
       .then((response) => {
