@@ -37,7 +37,7 @@ export class AddProduct extends Component {
       alert('All fields are compulsory')
     }
     const payload = new FormData();
-    payload.append('name', this.state.title);
+    payload.append('name', this.state.name);
     payload.append('price', this.state.price);
     payload.append('category', this.state.category);
     payload.append('description', this.state.description);

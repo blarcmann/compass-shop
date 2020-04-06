@@ -1,9 +1,10 @@
-import { INITIALIZED, ERROR, CLEAR, CREATE_PRODUCT } from '../constants';
+import { INITIALIZED, ERROR, CLEAR, CREATE_PRODUCT, SINGLE_PRODUCT, ALL_PRODUCTS } from '../constants';
 
 const initialState = {
   initialized: false,
   error: false,
   product: {},
+  singleProduct: {},
   allProducts: []
 }
 
@@ -14,6 +15,17 @@ export default function product(state = initialState, action) {
       return {
         ...state,
         product
+      }
+    case SINGLE_PRODUCT:
+      let singleProduct = Object.assign({}, action.payload);
+      return {
+        ...state,
+        singleProduct
+      }
+    case ALL_PRODUCTS:
+      return {
+        ...state,
+        allProducts: [...state.allProducts, action.payload]
       }
     case INITIALIZED:
       return {
