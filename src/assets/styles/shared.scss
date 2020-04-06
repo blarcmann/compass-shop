@@ -64,7 +64,7 @@ a {
 .bttn {
 	display: flex;
 	width: auto;
-	max-width: 195px;
+	min-width: 125px;
 	height: 45px;
 	letter-spacing: 0.5px;
 	line-height: 45px;
@@ -77,6 +77,28 @@ a {
 	transition: all 0.5s ease 0s;
 	text-decoration: none;
 	border: none;
+	position: relative;
+	.loader {
+		opacity: 1;
+		position: absolute;
+		right: 7px;
+		top: 52%;
+		height: 18px;
+		width: 18px;
+		background-color: transparent;
+		box-sizing: border-box;
+		border-radius: 50%;
+		border-top: 2px solid #fff;
+		border-left: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+		border-right: 2px solid rgba(#fff, 0.35);
+		transition: all 0.5s ease;
+		animation-name: spin;
+		animation-duration: 0.75s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+
 	@media(max-width: 680px) {
 		font-size: 0.75rem;
 	}
@@ -107,6 +129,11 @@ a {
 		background-color: white;
 		color: #000000;
 		border: 1px solid rgb(221, 221, 221);
+		.loader {
+			border-top: 2px solid #000000;
+			border-left: 2px solid #000000;
+			border-bottom: 2px solid #000000;
+		}
 	}
 }
 
@@ -208,4 +235,10 @@ ul.coll {
 	to {
 		transform: translateY(0);
 	}
+}
+
+
+@keyframes spin {
+    from {transform: translateY(-50%) rotate(0deg);}
+    to {transform: translateY(-50%) rotate(360deg);}
 }
