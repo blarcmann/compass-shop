@@ -19,11 +19,11 @@ export default function Contact() {
             <div className="col-md-6">
               <div className="to-know">
                 <h1>Never miss out on exiting chances</h1>
-                <p>Its never about just the sellers, we keep you in mind incase there's</p>
+                <p>Its never about just the products, we keep the value in mind too!</p>
                 <ul className="connect">
                   <li>
                     <img src={require('../assets/images/location.svg')} alt="*" />
-                    <span>22 cashman road, berger, Lagos</span>
+                    <span>22 Cashman close, berger, Lagos</span>
                   </li>
                   <li>
                     <img src={require('../assets/images/calender.svg')} alt="*" />

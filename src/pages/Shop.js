@@ -1,19 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import '../assets/styles/pages/shop.scss';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Filter from '../components/Filter';
 import Pagination from '../components/Pagination';
-import '../assets/styles/pages/shop.scss';
-import { sideColl, shopSorting } from '../constants/mock';
-import Collections from '../components/Collections';
-import Searchbar from '../components/Searchbar';
+import Product from '../components/Product';
 import PageBreadcrumb from '../components/Page-breadcrumb';
+import Searchbar from '../components/Searchbar';
+import Collections from '../components/Collections';
+import Loader from '../components/Loader';
+
+import { sideColl, shopSorting } from '../constants/mock';
+import { fetchProducts, addToCart } from '../actions/products';
 
 export class Shop extends Component {
+  state = {
+    loading: true
+  }
+
+  componentDidMount() {
+    this.props.fetchProducts();
+  }
   render() {
     const paths = ['shop'];
+    const { products, addToCart } = this.props;
+    if (!this.props.products[0]) return <Loader loading={this.state.loading} />
     return (
       <>
         <Header />
@@ -35,7 +48,7 @@ export class Shop extends Component {
               </div>
               <div className="col-lg-9">
                 <div className="top-tile large-screens-only">
-                  <div className="page-result">Showing 1–12 of 19 results</div>
+                  <div className="page-result">Showing 1–{products[0].length} of {products[0].length} results</div>
                   <Filter options={shopSorting} />
                 </div>
                 <div className="top-tile small-screens-only">
@@ -44,159 +57,12 @@ export class Shop extends Component {
                 </div>
                 <div className="products">
                   <div className="row">
-                    <div className="col-md-4">
-                      <Link to="product/1234567" className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add slide-in">
-                            <img src={require('../assets/images/cart.svg')} alt="*" />
-                            Add to cart
-                          </button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </Link>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add slide-in">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add slide-in">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add slide-in">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-4">
-                      <div className="product">
-                        <div className="view">
-                          <img src={require('../assets/images/menu-4.jpg')} alt="*" />
-                          <button className="add">Add to cart</button>
-                        </div>
-                        <div className="detail">
-                          <div className="name">Bottle bag</div>
-                          <div className="price">$59</div>
-                        </div>
-                      </div>
-                    </div>
+                    {products && products.length > 0 ?
+                      products[0].map((product, i) => (
+                        <Product product={product} key={i} add={addToCart} />
+                      ))
+                      : ''
+                    }
                   </div>
                 </div>
                 <Pagination />
@@ -211,11 +77,9 @@ export class Shop extends Component {
 }
 
 const mapStateToProps = (state) => ({
-
+  products: state.product.allProducts
 })
 
-const mapDispatchToProps = {
-
-}
+const mapDispatchToProps = { fetchProducts, addToCart }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop)

@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../assets/styles/pages/signin.scss';
-import { signin } from '../actions/auth';
+import { signin, login } from '../actions/auth';
 
 export class Signin extends Component {
   state = {
-    loading: false,
     email: '',
     username: '',
     password: '',
@@ -16,24 +15,34 @@ export class Signin extends Component {
 
   handleChange = (key, value) => {
     this.setState({ [key]: value })
-    console.log(this.state);
   }
 
   setActiveTab = (tab) => {
     return this.setState({ activeTab: tab })
   }
 
-  submitForm = (e) => {
+  authenticateUser = (e) => {
+    e.preventDefault();
+    if (!this.state.email || !this.state.password) { return }
+    this.setState({ loading: true });
+    let payload = {
+      email: this.state.email,
+      password: this.state.password,
+    }
+    this.props.login(this.props, payload);
+  }
+
+  createUser = (e) => {
     e.preventDefault();
     if (!this.state.email || !this.state.password || !this.state.username) { return }
     this.setState({ loading: true });
     let payload = {
       email: this.state.email,
+      username: this.state.username,
       password: this.state.password,
-
     }
-    this.props.signin(this.props, payload);
-    this.setState({ loading: false });
+    console.log(payload);
+    this.props.signin(payload);
   }
 
 
@@ -54,7 +63,7 @@ export class Signin extends Component {
                 <section className={this.state.activeTab === 'signup' ? "sign-up-in slide-in" : 'hide'}>
                   <h3 className="title">I do not have an account</h3>
                   <p className="subtitle">Enter your details below</p>
-                  <form onSubmit={this.submitForm}>
+                  <form onSubmit={this.createUser}>
                     <input type="email" placeholder="Email" value={this.state.email} className="form-item"
                       onChange={e => this.handleChange('email', e.target.value)}
                     />
@@ -65,14 +74,17 @@ export class Signin extends Component {
                       onChange={e => this.handleChange('password', e.target.value)}
                     />
                     <div className="submit">
-                      <button to="/shop" className="bttn primary">sign up</button>
+                      <button to="/shop" className="bttn primary">
+                        sign up
+                        <span className={this.props.initialized ? "loader" : 'hide'}></span>
+                      </button>
                     </div>
                   </form>
                 </section>
                 <section className={this.state.activeTab === 'login' ? "sign-up-in slide-in" : 'hide'}>
                   <h3 className="title">I do have an account</h3>
                   <p className="subtitle">Enter your credentials below</p>
-                  <form onSubmit={this.submitForm}>
+                  <form onSubmit={this.authenticateUser}>
                     <input type="email" placeholder="Email" value={this.state.email} className="form-item"
                       onChange={e => this.handleChange('email', e.target.value)}
                     />
@@ -80,7 +92,10 @@ export class Signin extends Component {
                       onChange={e => this.handleChange('password', e.target.value)}
                     />
                     <div className="submit">
-                      <button to="/shop" className="bttn primary">login</button>
+                      <button to="/shop" className="bttn primary">
+                        login
+                        <span className={this.props.initialized ? "loader" : 'hide'}></span>
+                      </button>
                     </div>
                   </form>
                 </section>
@@ -94,6 +109,10 @@ export class Signin extends Component {
   }
 }
 
-const mapDispatchToProps = { signin }
+const mapStateToProps = state => ({
+  initialized: state.auth.initialized,
+})
 
-export default connect(null, mapDispatchToProps)(Signin)
+const mapDispatchToProps = { signin, login }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signin)

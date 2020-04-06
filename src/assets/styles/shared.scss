@@ -24,13 +24,13 @@ body {
 	// padding: 1rem 1.5rem;
 	.title {
 		text-transform: uppercase;
-		font-size: 3rem;
+		font-size: 2.5rem;
 		font-weight: 800;
 		&:after {
 			content: ' ';
 			display: block;
 			width: 3rem;
-			height: 0.45rem;
+			height: 0.25rem;
 			background-color: #c8ff0b;
 		}
 	}
@@ -64,7 +64,8 @@ a {
 .bttn {
 	display: flex;
 	width: auto;
-	max-width: 195px;
+	min-width: 144px;
+	max-width: 200px;
 	height: 45px;
 	letter-spacing: 0.5px;
 	line-height: 45px;
@@ -77,6 +78,28 @@ a {
 	transition: all 0.5s ease 0s;
 	text-decoration: none;
 	border: none;
+	position: relative;
+	.loader {
+		opacity: 1;
+		position: absolute;
+		right: 7px;
+		top: 52%;
+		height: 18px;
+		width: 18px;
+		background-color: transparent;
+		box-sizing: border-box;
+		border-radius: 50%;
+		border-top: 2px solid #fff;
+		border-left: 2px solid #fff;
+		border-bottom: 2px solid #fff;
+		border-right: 2px solid rgba(#fff, 0.35);
+		transition: all 0.5s ease;
+		animation-name: spin;
+		animation-duration: 0.75s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+
 	@media(max-width: 680px) {
 		font-size: 0.75rem;
 	}
@@ -107,6 +130,11 @@ a {
 		background-color: white;
 		color: #000000;
 		border: 1px solid rgb(221, 221, 221);
+		.loader {
+			border-top: 2px solid #000000;
+			border-left: 2px solid #000000;
+			border-bottom: 2px solid #000000;
+		}
 	}
 }
 
@@ -118,16 +146,24 @@ a {
 	font-size: 0.875rem;
 	padding: 0.5rem 1rem;
 	margin: 1.75rem auto 0;
+	background: none;
 	@media(min-width: 992px) {
 		width: 80%;
 	}
 }
 
+.placeholder {
+	font-size: 0.875rem;
+	text-align: center;
+	font-weight: 500;
+	color: #444;
+}
 textarea.form-item {
 	height: 200px;
 	margin-bottom: 1.5rem;
 	padding: 1rem;
 }
+
 ul.coll {
 	list-style: none;
 	padding-left: 0.125rem;
@@ -206,4 +242,10 @@ ul.coll {
 	to {
 		transform: translateY(0);
 	}
+}
+
+
+@keyframes spin {
+    from {transform: translateY(-50%) rotate(0deg);}
+    to {transform: translateY(-50%) rotate(360deg);}
 }
