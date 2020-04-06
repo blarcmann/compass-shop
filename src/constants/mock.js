@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001';
+const BASE_URL = 'https://compass-shop-test.herokuapp.com';
 const collections = ['exercise', 'running', 'sneakers', 'sport', 'swim - equipment'];
 const categories = ['featured', 'top', 'women', 'children', 'men'];
 const sideColl = [
