@@ -7,7 +7,7 @@ import PageBreadcrumb from '../components/Page-breadcrumb';
 import Loader from '../components/Loader';
 
 import '../assets/styles/pages/product-details.scss';
-import { fetchProduct } from '../actions/products';
+import { fetchProduct, addToCart } from '../actions/products';
 
 export class ProductDetails extends Component {
   state = {
@@ -21,7 +21,7 @@ export class ProductDetails extends Component {
   render() {
     const paths = ['product'];
     const imgs = ['a', 'b', 'c'];
-    const { product } = this.props;
+    const { product, addToCart } = this.props;
     if (!this.props.product) return <Loader loading={this.state.loading} />
     return (
       <>
@@ -35,8 +35,8 @@ export class ProductDetails extends Component {
               <div className="col-xl-8">
                 <div className="gallery">
                   <div className="parts">
-                    {imgs.map(() => (
-                      <div className="each-part" style={{ backgroundImage: `url(${product.product_image})` }}></div>
+                    {imgs.map((i) => (
+                      <div key={i} className="each-part" style={{ backgroundImage: `url(${product.product_image})` }}></div>
                     ))}
                   </div>
                   <div className="full">
@@ -66,7 +66,7 @@ export class ProductDetails extends Component {
                       <span className="value">Equipments, {product.category}</span>
                     </li>
                   </ul>
-                  <button className="bttn primary">Add to cart</button>
+                  <button className="bttn primary" onClick={() => addToCart(product)}>Add to cart</button>
                 </div>
               </div>
             </div>
@@ -82,6 +82,6 @@ const mapStateToProps = (state) => ({
   product: state.product.singleProduct
 })
 
-const mapDispatchToProps = { fetchProduct }
+const mapDispatchToProps = { fetchProduct, addToCart }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails)

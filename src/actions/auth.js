@@ -16,7 +16,6 @@ export function signin(payload) {
         }
         toaster.notify('Success', { duration: 2000, position: 'bottom-right' });
         const res = response.data;
-        localStorage.setItem('userData', JSON.stringify(res));
         dispatch(saveUserData(res));
         dispatch(clear());
         console.log(response.data);
@@ -38,6 +37,7 @@ export function login(props, payload) {
         }
         const res = response.data;
         localStorage.setItem('csUserToken', res.token);
+        localStorage.setItem('userData', JSON.stringify(res.user));
         dispatch(saveToken(res));
         props.history.push('/shop');
       })

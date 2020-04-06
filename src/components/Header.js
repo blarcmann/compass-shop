@@ -5,6 +5,7 @@ import '../assets/styles/components/header.scss';
 export default function Header() {
   const [menu, toggle] = useState(false);
   const [user] = useState(JSON.parse(localStorage.getItem('userData')))
+  console.log(user);
   const token = localStorage.getItem('csUserToken');
   function toggleMenu() {
     toggle(prevState => !prevState);
@@ -27,7 +28,7 @@ export default function Header() {
               <div className="menu-item"><Link to="/contact">Contact</Link></div>
               <div className={!token ? "menu-item" : "hide"}><Link to="/sign-in">Sign In</Link></div>
               <div className={token ? "menu-item" : "hide"}><Link to="/add-product">Create Product</Link></div>
-              <div className={token ? "menu-item user" : "hide"}><Link to="">{user && user.user ? user.user.username : ''}</Link></div>
+              <div className={token ? "menu-item user" : "hide"}><Link to="">{user ? user.username : ''}</Link></div>
               <div className="menu-item">
                 <Link to="/cart" className="cart">
                   <img src={require('../assets/images/shopping-cart.svg')} alt="@" />
@@ -56,7 +57,7 @@ export default function Header() {
             <div className="menu-item"><Link to="/contact">Contact</Link></div>
             <div className={!token ? "menu-item" : "hide"}><Link to="/sign-in">Sign In</Link></div>
             <div className={token ? "menu-item" : "hide"}><Link to="/add-product">Create Product</Link></div>
-            <div className={token ? "menu-item user" : "hide"}><Link to="">{user && user.user ? user.user.username : ''}</Link></div>
+            <div className={token ? "menu-item user" : "hide"}><Link to="">{user ? user.username : ''}</Link></div>
             <div className="menu-item">
               <Link to="/cart" className="cart">
                 <img src={require('../assets/images/shopping-cart.svg')} alt="@" />

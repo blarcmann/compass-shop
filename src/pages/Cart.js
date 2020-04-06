@@ -5,10 +5,15 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import '../assets/styles/pages/cart.scss';
 import PageBreadcrumb from '../components/Page-breadcrumb';
+import Loader from '../components/Loader';
+import CartItem from '../components/Cart-item';
 
 export class Cart extends Component {
   render() {
     const paths = ['cart'];
+    const { cart } = this.props;
+    console.log(cart);
+    if (!this.props.cart) return <Loader loading={this.state.loading} />
     return (
       <>
         <Header />
@@ -17,60 +22,14 @@ export class Cart extends Component {
             <PageBreadcrumb paths={paths} title="Cart" />
             <div className="row">
               <div className="col-lg-7">
+                {!this.props.cart || !this.props.cart.length ?
+                  <h1 className="mt-5 mb-5 ml-4">Cart is empty!</h1>
+                  : ''}
                 <div className="cart-items">
-                  <h2 className="section-title">Your cart</h2>
-                  <div className="cart-item">
-                    <div className="remove-cart-item">
-                      <img src={require('../assets/images/delete.svg')} alt="*" />
-                    </div>
-                    <div className="image">
-                      <img src={require('../assets/images/menu-2.jpg')} alt="" />
-                    </div>
-                    <Link to="/shop" className="name">Almord jersey (away)</Link>
-                    <div className="price">$32</div>
-                    <div className="amount">
-                      <input type="number" />
-                    </div>
-                  </div>
-                  <div className="cart-item">
-                    <div className="remove-cart-item">
-                      <img src={require('../assets/images/delete.svg')} alt="*" />
-                    </div>
-                    <div className="image">
-                      <img src={require('../assets/images/menu-2.jpg')} alt="" />
-                    </div>
-                    <Link to="/shop" className="name">Almord jersey (away)</Link>
-                    <div className="price">$32</div>
-                    <div className="amount">
-                      <input type="number" />
-                    </div>
-                  </div>
-                  <div className="cart-item">
-                    <div className="remove-cart-item">
-                      <img src={require('../assets/images/delete.svg')} alt="*" />
-                    </div>
-                    <div className="image">
-                      <img src={require('../assets/images/menu-2.jpg')} alt="" />
-                    </div>
-                    <Link to="/shop" className="name">Almord jersey (away)</Link>
-                    <div className="price">$32</div>
-                    <div className="amount">
-                      <input type="number" />
-                    </div>
-                  </div>
-                  <div className="cart-item">
-                    <div className="remove-cart-item">
-                      <img src={require('../assets/images/delete.svg')} alt="*" />
-                    </div>
-                    <div className="image">
-                      <img src={require('../assets/images/menu-2.jpg')} alt="" />
-                    </div>
-                    <Link to="/shop" className="name">Almord jersey (away)</Link>
-                    <div className="price">$32</div>
-                    <div className="amount">
-                      <input type="number" />
-                    </div>
-                  </div>
+                  {/* <h2 className="section-title">Your cart</h2> */}
+                  {cart.map((product, i) => (
+                    <CartItem key={i} product={product} />
+                  ))}
                   <div className="back">
                     <Link to="/shop" className="bttn primary">
                       <img src={require('../assets/images/back.svg')} className="left" alt="" />
@@ -114,11 +73,9 @@ export class Cart extends Component {
 }
 
 const mapStateToProps = (state) => ({
-
+  cart: state.product.cart
 })
 
-const mapDispatchToProps = {
-
-}
+const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)

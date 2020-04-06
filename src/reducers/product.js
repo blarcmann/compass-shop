@@ -1,11 +1,20 @@
-import { INITIALIZED, ERROR, CLEAR, CREATE_PRODUCT, SINGLE_PRODUCT, ALL_PRODUCTS } from '../constants';
+import {
+  INITIALIZED,
+  ERROR,
+  CLEAR,
+  CREATE_PRODUCT,
+  SINGLE_PRODUCT,
+  ALL_PRODUCTS,
+  ADDED_TO_CART
+} from '../constants';
 
 const initialState = {
   initialized: false,
   error: false,
   product: {},
   singleProduct: {},
-  allProducts: []
+  allProducts: [],
+  cart: localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : []
 }
 
 export default function product(state = initialState, action) {
@@ -26,6 +35,12 @@ export default function product(state = initialState, action) {
       return {
         ...state,
         allProducts: [...state.allProducts, action.payload]
+      }
+    case ADDED_TO_CART:
+      const cart = JSON.parse(localStorage.getItem('cart'))
+      return {
+        ...state,
+        cart
       }
     case INITIALIZED:
       return {

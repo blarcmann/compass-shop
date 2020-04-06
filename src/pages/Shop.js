@@ -13,7 +13,7 @@ import Collections from '../components/Collections';
 import Loader from '../components/Loader';
 
 import { sideColl, shopSorting } from '../constants/mock';
-import { fetchProducts } from '../actions/products';
+import { fetchProducts, addToCart } from '../actions/products';
 
 export class Shop extends Component {
   state = {
@@ -25,7 +25,7 @@ export class Shop extends Component {
   }
   render() {
     const paths = ['shop'];
-    const { products } = this.props;
+    const { products, addToCart } = this.props;
     if (!this.props.products[0]) return <Loader loading={this.state.loading} />
     return (
       <>
@@ -59,7 +59,7 @@ export class Shop extends Component {
                   <div className="row">
                     {products && products.length > 0 ?
                       products[0].map((product, i) => (
-                        <Product product={product} key={i} />
+                        <Product product={product} key={i} add={addToCart} />
                       ))
                       : ''
                     }
@@ -80,6 +80,6 @@ const mapStateToProps = (state) => ({
   products: state.product.allProducts
 })
 
-const mapDispatchToProps = { fetchProducts }
+const mapDispatchToProps = { fetchProducts, addToCart }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Shop)
