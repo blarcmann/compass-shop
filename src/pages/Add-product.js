@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import toaster from "toasted-notes";
 import '../assets/styles/pages/signin.scss';
 import { createProduct } from '../actions/products';
 import { sideColl } from '../constants/mock';
 import PageBreadcrumb from '../components/Page-breadcrumb';
-
 
 export class AddProduct extends Component {
   state = {
@@ -22,13 +22,14 @@ export class AddProduct extends Component {
   }
 
   addProduct = (e) => {
+    console.log('con');
+    toaster.notify('we here', { duration: 3000, position: 'bottom-right' });
     e.preventDefault();
     if (!this.state.name || !this.state.price || !this.state.description || !this.state.category) { return }
     this.setState({ loading: true });
     let payload = {
       email: this.state.email,
       password: this.state.password,
-
     }
     this.props.signin(this.props, payload);
     this.setState({ loading: false });
@@ -60,7 +61,10 @@ export class AddProduct extends Component {
                   </select>
                   <textarea rows="5" placeholder="Product's description" className="form-item"></textarea>
                   <div className="submit">
-                    <button to="/shop" className="bttn primary">sign up</button>
+                    <button to="/shop" className="bttn primary"
+                      onClick={this.addProduct}>
+                      sign up
+                    </button>
                   </div>
                 </form>
               </section>
