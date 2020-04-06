@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import toaster from "toasted-notes";
 import '../assets/styles/pages/signin.scss';
 import { createProduct } from '../actions/products';
 import { sideColl } from '../constants/mock';
@@ -15,25 +14,38 @@ export class AddProduct extends Component {
     price: '',
     category: 'All',
     description: '',
+    fs: '',
   }
 
   handleChange = (key, value) => {
     this.setState({ [key]: value })
   }
 
-  addProduct = (e) => {
-    console.log('con');
-    toaster.notify('we here', { duration: 3000, position: 'bottom-right' });
+  onFileChange = (e) => {
     e.preventDefault();
-    if (!this.state.name || !this.state.price || !this.state.description || !this.state.category) { return }
-    this.setState({ loading: true });
-    let payload = {
-      email: this.state.email,
-      password: this.state.password,
+    if (e.target.files.length > 0) {
+      this.setState({
+        fs: e.target.files[0]
+      })
     }
-    this.props.signin(this.props, payload);
+  }
+
+
+  addProduct = (e) => {
+    e.preventDefault();
+    if (!this.state.name || !this.state.price || !this.state.description || !this.state.category) {
+      alert('All fields are compulsory')
+    }
+    const payload = new FormData();
+    payload.append('name', this.state.title);
+    payload.append('price', this.state.price);
+    payload.append('category', this.state.category);
+    payload.append('description', this.state.description);
+    payload.append('product_image', this.state.fs, this.state.fs.name);
+    this.props.createProduct(this.props, payload);
     this.setState({ loading: false });
   }
+
   render() {
     const paths = ['add-product'];
     return (
@@ -53,17 +65,29 @@ export class AddProduct extends Component {
                   <input type="number" placeholder="Product's price" value={this.state.price} className="form-item"
                     onChange={e => this.handleChange('price', e.target.value)}
                   />
+                  <div className="upload-file">
+                    <label htmlFor="feature_img">
+                      <img src={require('../assets/images/upload.svg')} alt="*" />
+                    </label>
+                    <input type="file" accept="image/*" name="feature_img" id="feature_img"
+                      onChange={(e) => this.onFileChange(e)} />
+                    <div className={!this.state.fs ? "placeholder" : "hide"}>product's image</div>
+                    <div className={this.state.fs ? "placeholder slide-in" : "hide"}>{this.state.fs.name}</div>
+                  </div>
                   <select name="category" className="form-item"
                     onChange={e => this.handleChange('category', e.target.value)}>
                     {sideColl.map((coll, i) => (
                       <option className="form-item" key={i} value={coll}>{coll}</option>
                     ))}
                   </select>
-                  <textarea rows="5" placeholder="Product's description" className="form-item"></textarea>
+                  <textarea rows="5" placeholder="Product's description" value={this.state.description} className="form-item"
+                    onChange={e => this.handleChange('description', e.target.value)}
+                  ></textarea>
                   <div className="submit">
-                    <button to="/shop" className="bttn primary"
+                    <button className="bttn primary"
                       onClick={this.addProduct}>
-                      sign up
+                      add product
+                      <span className={this.props.initialized ? "loader" : 'hide'}></span>
                     </button>
                   </div>
                 </form>
@@ -77,7 +101,10 @@ export class AddProduct extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  initialized: state.product.initialized,
+})
 
 const mapDispatchToProps = { createProduct }
 
-export default connect(null, mapDispatchToProps)(AddProduct)
+export default connect(mapStateToProps, mapDispatchToProps)(AddProduct)

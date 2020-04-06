@@ -1,4 +1,4 @@
-import { LOGIN, INITIALIZED, CLEAR } from '../constants';
+import { LOGIN, INITIALIZED, CLEAR, SIGN_UP } from '../constants';
 import axios from 'axios';
 import toaster from "toasted-notes";
 import { BASE_URL } from '../constants/mock';
@@ -15,6 +15,9 @@ export function signin(payload) {
           return console.log(response, 'not successful');
         }
         toaster.notify('Success', { duration: 2000, position: 'bottom-right' });
+        const res = response.data;
+        localStorage.setItem('userData', JSON.stringify(res));
+        dispatch(saveUserData(res));
         dispatch(clear());
         console.log(response.data);
       })
@@ -34,8 +37,8 @@ export function login(props, payload) {
           return console.log(response, 'not successful');
         }
         const res = response.data;
-        localStorage.setItem('userToken', res.token);
-        dispatch(saveUserAuth(res));
+        localStorage.setItem('csUserToken', res.token);
+        dispatch(saveToken(res));
         props.history.push('/shop');
       })
       .catch(error => {
@@ -45,9 +48,16 @@ export function login(props, payload) {
   }
 }
 
-function saveUserAuth(data) {
+function saveToken(data) {
   return {
     type: LOGIN,
+    payload: data
+  };
+}
+
+function saveUserData(data) {
+  return {
+    type: SIGN_UP,
     payload: data
   };
 }

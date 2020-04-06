@@ -1,25 +1,19 @@
-import { LOGIN, INITIALIZED, ERROR, CLEAR, SIGN_UP } from '../constants';
+import { INITIALIZED, ERROR, CLEAR, CREATE_PRODUCT } from '../constants';
 
 const initialState = {
   initialized: false,
   error: false,
-  token: {},
-  user: {}
+  product: {},
+  allProducts: []
 }
 
-export default function auth(state = initialState, action) {
+export default function product(state = initialState, action) {
   switch (action.type) {
-    case LOGIN:
-      let token = Object.assign({}, action.payload);
+    case CREATE_PRODUCT:
+      let product = Object.assign({}, action.payload);
       return {
         ...state,
-        token
-      }
-    case SIGN_UP:
-      let user = Object.assign({}, action.payload);
-      return {
-        ...state,
-        user
+        product
       }
     case INITIALIZED:
       return {

@@ -1,5 +1,5 @@
 .signin {
-  min-height: 85vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   .sign-up-in {
@@ -38,6 +38,7 @@
 
 .create-product {
   min-height: 70vh;
+  margin-bottom: 3rem;
   input, textarea, select {
     width: 99%;
   }
@@ -45,4 +46,23 @@
     display: flex;
     justify-content: center;
   }
+}
+
+.upload-file {
+	input {
+		display: none;
+  }
+  label {
+    width: 100%;
+    margin: 1.5rem 0 0;
+  }
+	label img {
+		width: 65px;
+		height: 65px;
+		display: block;
+		margin: 0.5rem auto;
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }
