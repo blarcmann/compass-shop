@@ -23,8 +23,10 @@
       justify-content: space-between;
       .each-part {
         width: 190px;
-        height: auto;
+        height: 189px;
         margin-bottom: 0.75rem;
+        background-position: center;
+        background-repeat: no-repeat;
         @media(max-width: 991px) {
           width: 94%;
           margin: 1rem auto;

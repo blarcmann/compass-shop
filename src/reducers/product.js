@@ -17,7 +17,7 @@ export default function product(state = initialState, action) {
         product
       }
     case SINGLE_PRODUCT:
-      let singleProduct = Object.assign({}, action.payload);
+      let singleProduct = Object.assign({}, action.product);
       return {
         ...state,
         singleProduct

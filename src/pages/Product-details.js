@@ -1,13 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PageBreadcrumb from '../components/Page-breadcrumb';
+import Loader from '../components/Loader';
+
 import '../assets/styles/pages/product-details.scss';
+import { fetchProduct } from '../actions/products';
 
 export class ProductDetails extends Component {
+  state = {
+    id: ''
+  }
+  componentDidMount() {
+    const id = this.props.match.params.id;
+    this.props.fetchProduct(id);
+    this.setState({ id })
+  }
   render() {
-    const paths = ['product']
+    const paths = ['product'];
+    const imgs = ['a', 'b', 'c'];
+    const { product } = this.props;
+    if (!this.props.product) return <Loader loading={this.state.loading} />
     return (
       <>
         <Header />
@@ -20,41 +35,35 @@ export class ProductDetails extends Component {
               <div className="col-xl-8">
                 <div className="gallery">
                   <div className="parts">
-                    <div className="each-part">
-                      <img src={require('../assets/images/part-a.jpg')} alt="#" />
-                    </div>
-                    <div className="each-part">
-                      <img src={require('../assets/images/part-b.jpg')} alt="#" />
-                    </div>
-                    <div className="each-part">
-                      <img src={require('../assets/images/part-c.jpg')} alt="#" />
-                    </div>
+                    {imgs.map(() => (
+                      <div className="each-part" style={{ backgroundImage: `url(${product.product_image})` }}></div>
+                    ))}
                   </div>
                   <div className="full">
-                    <img src={require('../assets/images/full-product-image.jpg')} alt="#" />
+                    <img src={product.product_image} alt={product.name} />
                   </div>
                 </div>
               </div>
               <div className="col-xl-4">
                 <div className="product-data">
-                  <h2 className="name">LEGGINGS GRAY</h2>
-                  <div className="price">$56</div>
+                  <h2 className="name">{product.name}</h2>
+                  <div className="price">${product.price}</div>
                   <div className="rating">
                     {new Array(4).fill('***').map((item, index) => (<span className="stars" key={index}>★</span>))}
                   </div>
-                  <p className="description">Creating the balance of elegance and flexibility. 100% Beatrix cutton, wired absolutely to the x-axis for ease base</p>
+                  <p className="description">{product.description}</p>
                   <ul className="others">
+                    <li>
+                      <span className="tag">Category: </span>
+                      <span className="value">{product.category}</span>
+                    </li>
                     <li>
                       <span className="tag">SKU: </span>
                       <span className="value">22</span>
                     </li>
                     <li>
-                      <span className="tag">Category: </span>
-                      <span className="value">Sport</span>
-                    </li>
-                    <li>
                       <span className="tag">Tags: </span>
-                      <span className="value">Equipments, Water</span>
+                      <span className="value">Equipments, {product.category}</span>
                     </li>
                   </ul>
                   <button className="bttn primary">Add to cart</button>
@@ -70,11 +79,9 @@ export class ProductDetails extends Component {
 }
 
 const mapStateToProps = (state) => ({
-
+  product: state.product.singleProduct
 })
 
-const mapDispatchToProps = {
-
-}
+const mapDispatchToProps = { fetchProduct }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails)

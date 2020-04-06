@@ -26,7 +26,6 @@ export class Shop extends Component {
   render() {
     const paths = ['shop'];
     const { products } = this.props;
-    console.log(products)
     if (!this.props.products[0]) return <Loader loading={this.state.loading} />
     return (
       <>
