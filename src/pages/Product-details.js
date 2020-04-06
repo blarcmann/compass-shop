@@ -37,7 +37,7 @@ export class ProductDetails extends Component {
                   <div className="parts">
                     {imgs.map((i) => (
                       <div key={i} className="each-part"
-                        style={{ backgroundImage: `url(${product.product_image ? product.backgroundImage : '../assets/images/404.svg'})` }}>
+                        style={{ backgroundImage: `url(${product.product_image ? product.product_image : '../assets/images/404.svg'})` }}>
                       </div>
                     ))}
                   </div>

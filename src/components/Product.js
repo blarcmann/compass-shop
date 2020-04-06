@@ -6,7 +6,7 @@ export default function Product({ product, add }) {
     <div className="col-md-4">
       <section className="product">
         <div className="view">
-          <img src={product.product_image} alt="*" />
+          <img src={product.product_image ? product.product_image : '../assets/images/404.svg'} alt="*" />
           <button className="add slide-in" onClick={() => add(product)}>
             <img src={require('../assets/images/cart.svg')} alt="*" />
             Add to cart

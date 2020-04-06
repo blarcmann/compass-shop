@@ -37,7 +37,7 @@ function CartItem({ product, updateCart }) {
         <img src={require('../assets/images/delete.svg')} alt="*" />
       </div>
       <div className="image">
-        <img src={product.product_image} alt="" />
+        <img src={product.product_image ? product.product_image : '../assets/images/404.svg'} alt="" />
       </div>
       <Link to="/shop" className="name">{product.name}</Link>
       <div className="price">${product.price}</div>
