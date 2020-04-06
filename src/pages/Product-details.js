@@ -36,11 +36,13 @@ export class ProductDetails extends Component {
                 <div className="gallery">
                   <div className="parts">
                     {imgs.map((i) => (
-                      <div key={i} className="each-part" style={{ backgroundImage: `url(${product.product_image})` }}></div>
+                      <div key={i} className="each-part"
+                        style={{ backgroundImage: `url(${product.product_image ? product.backgroundImage : '../assets/images/404.svg'})` }}>
+                      </div>
                     ))}
                   </div>
                   <div className="full">
-                    <img src={product.product_image} alt={product.name} />
+                    <img src={product.product_image ? product.product_image : '../assets/images/404.svg'} alt={product.name} />
                   </div>
                 </div>
               </div>

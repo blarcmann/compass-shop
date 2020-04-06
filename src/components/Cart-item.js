@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { updateCart } from '../actions/products';
 
-export default function CartItem({ product }) {
+function CartItem({ product, updateCart }) {
   const [quantity, setVal] = useState(product.quantity);
-  // const [prod, remove] = useState('');
 
   function removeProduct(id) {
     console.log('init', id);
@@ -26,7 +27,8 @@ export default function CartItem({ product }) {
         p.quantity = val
       }
     });
-    localStorage.setItem('cart', JSON.stringify(products))
+    updateCart(products);
+    localStorage.setItem('cart', JSON.stringify(products));
   }
 
   return (
@@ -45,3 +47,7 @@ export default function CartItem({ product }) {
     </div>
   )
 }
+
+const MapDispatchToProps = { updateCart }
+
+export default connect(null, MapDispatchToProps)(CartItem)

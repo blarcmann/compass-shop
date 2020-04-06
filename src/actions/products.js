@@ -90,6 +90,28 @@ export function addToCart(product) {
   }
 }
 
+export function updateCart(cart) {
+  return (dispatch) => {
+    dispatch(initialized());
+    localStorage.setItem('cart', JSON.stringify(cart))
+    dispatch(addedToCart('w'));
+    dispatch(initialized());
+  }
+}
+
+export function checkout(props) {
+  return (dispatch) => {
+    dispatch(initialized());
+    toaster.notify('Checking out...', { duration: 2000, position: 'bottom-right' });
+    setTimeout(() => {
+      localStorage.setItem('cart', JSON.stringify([]))
+      dispatch(addedToCart('w'));
+      dispatch(initialized());
+      props.history.push('/shop');
+    }, 2000)
+  }
+}
+
 
 function productCreated(data) {
   return {

@@ -8,11 +8,21 @@ import PageBreadcrumb from '../components/Page-breadcrumb';
 import Loader from '../components/Loader';
 import CartItem from '../components/Cart-item';
 
+import { checkout } from '../actions/products';
+
 export class Cart extends Component {
+
+  getCartTotal = () => {
+    let total = 0;
+    this.props.cart.forEach((data, index) => {
+      total += data['price'] * data.quantity;
+    });
+    return total;
+  }
+
   render() {
     const paths = ['cart'];
-    const { cart } = this.props;
-    console.log(cart);
+    const { cart, checkout } = this.props;
     if (!this.props.cart) return <Loader loading={this.state.loading} />
     return (
       <>
@@ -45,18 +55,18 @@ export class Cart extends Component {
                     <div className="sub-totals">
                       <div className="each">
                         <div className="label">sub total</div>
-                        <div className="value">$984</div>
+                        <div className="value">${this.getCartTotal()}</div>
                       </div>
                       <div className="each">
                         <div className="label">shipping</div>
-                        <div className="value">$23</div>
+                        <div className="value">$23 (fixed)</div>
                       </div>
                     </div>
                     <div className="total">
                       <h3 className="label">shipping</h3>
-                      <h3 className="value">$23</h3>
+                      <h3 className="value">${this.getCartTotal() !== 0 ? this.getCartTotal() + 23 : 0}</h3>
                     </div>
-                    <button className="bttn secondary">
+                    <button className="bttn secondary" onClick={() => checkout(this.props)}>
                       Proceed to checkout
                        <img src={require('../assets/images/next.svg')} alt="" />
                     </button>
@@ -76,6 +86,6 @@ const mapStateToProps = (state) => ({
   cart: state.product.cart
 })
 
-const mapDispatchToProps = {}
+const mapDispatchToProps = { checkout }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart)
