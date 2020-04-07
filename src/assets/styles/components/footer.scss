@@ -4,8 +4,16 @@
   justify-content: space-between;
   padding: 1rem;
   border-top: 1px solid #555;
-  // position: absolute;
-  // bottom: 0;
+  @media(max-width: 600px) {
+    display: block;
+    .writer, .menus {
+      text-align: center;
+    }
+    .writer {
+      margin-top: 1.5rem;
+      font-size: 0.75rem;
+    }
+  }
   a {
     font-size: 0.8125rem;
     padding: 0.25rem 0.5rem;

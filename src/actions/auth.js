@@ -30,6 +30,7 @@ export function signin(payload) {
 
 export function login(props, payload) {
   return (dispatch) => {
+    dispatch(initialized());
     axios.post(`${url}/login`, payload)
       .then((response) => {
         if (response.data.success === false) {

@@ -19,6 +19,10 @@
         }
       }
       .items-cover {
+        button {
+          background: none;
+          border: none;
+        }
         .toggler {
           padding: 0.25rem;
           img {
@@ -34,6 +38,12 @@
         &.user {
           font-weight: 800;
           text-decoration: underline;
+        }
+        &.logout {
+          padding: 0.5rem 1rem;
+          color: rgb(235, 50, 26);
+          font-weight: 800;
+          cursor: pointer;
         }
         a {
           text-transform: uppercase;
@@ -71,6 +81,12 @@
         a {
           font-size: 1rem;
         }
+      }
+      &.logout {
+        padding: 0.5rem 1rem;
+        color: rgb(235, 50, 26);
+        font-weight: 800;
+        cursor: pointer;
       }
       a {
         color: #555;

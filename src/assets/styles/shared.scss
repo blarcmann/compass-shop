@@ -169,14 +169,14 @@ ul.coll {
 	padding-left: 0.125rem;
 	&.large {
 		li a {
-			font-size: 0.935rem;
+			font-size: 1rem;
 		}
 	}
 	li {
-		margin-bottom: 0.25rem;
+		margin-bottom: 0.75rem;
 		a {
 			color: #333;
-			font-size: 0.8125rem;
+			font-size: 1rem;
 			letter-spacing: 0.5px;
 			&:hover {
 				text-decoration: underline;

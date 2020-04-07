@@ -3,15 +3,17 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../assets/styles/components/header.scss';
 
-function Header({ cart }) {
+function Header({ cart, history }) {
   const [menu, toggle] = useState(false);
-  const [user] = useState(JSON.parse(localStorage.getItem('userData')));
-  // const { cart } = props;
+  const [user] = useState(localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')) : '');
   const token = localStorage.getItem('csUserToken');
   function toggleMenu() {
     toggle(prevState => !prevState);
   }
-
+  function logout() {
+    localStorage.setItem('csUserToken', '');
+    window.location.reload();
+  }
 
   return (
     <nav className="header">
@@ -29,6 +31,7 @@ function Header({ cart }) {
               <div className="menu-item"><Link to="/contact">Contact</Link></div>
               <div className={!token ? "menu-item" : "hide"}><Link to="/sign-in">Sign In</Link></div>
               <div className={token ? "menu-item" : "hide"}><Link to="/add-product">Create Product</Link></div>
+              <div className={token ? "menu-item logout" : "hide"} onClick={logout}>logout</div>
               <div className={token ? "menu-item user" : "hide"}><Link to="">{user ? user.username : ''}</Link></div>
               <div className="menu-item">
                 <Link to="/cart" className="cart">
@@ -62,7 +65,7 @@ function Header({ cart }) {
             <div className="menu-item">
               <Link to="/cart" className="cart">
                 <img src={require('../assets/images/shopping-cart.svg')} alt="@" />
-                <span>4</span>
+                <span>{cart.length}</span>
               </Link>
             </div>
           </div>

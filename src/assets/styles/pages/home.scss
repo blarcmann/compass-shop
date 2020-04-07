@@ -122,6 +122,9 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      @media(max-width: 767px) {
+        margin-top: 1.5rem;
+      }
       .arrival-item {
         padding: 0.5rem 2rem;
         color: #FFF;
@@ -160,10 +163,13 @@
       justify-content: space-between;
       flex-wrap: wrap;
       .collection {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
+        @media(max-width: 600px) {
+          margin: 1.5rem 1rem;
+        }
         .tile {
-          font-size: 1rem;
-          font-weight: 300;
+          font-size: 1.125rem;
+          font-weight: 800;
           text-transform: uppercase;
           position: relative;
           margin-bottom: 0.75rem;
@@ -171,7 +177,7 @@
             content: ' ';
             display: block;
             width: 0.75rem;
-            height: 0.125rem;
+            height: 0.2rem;
             background-color: #c8ff0b;
             position: absolute;
             top: 100%;
