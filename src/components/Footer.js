@@ -13,7 +13,7 @@ export default function Footer() {
             <Link to="/contact">Contact Us</Link>
           </div>
           <div className="writer">
-            <a href="https://twitter.com/yemiotola" className="writer" target="_blank" rel="noopener noreferrer">@yemiOdetola</a>
+            <a href="https://twitter.com/yemiotola" className="writer" target="_blank" rel="noopener noreferrer">with <span aria-label="love" role="img">❤️</span> from @yemiOdetola</a>
           </div>
         </div>
       </div>

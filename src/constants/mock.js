@@ -1,5 +1,5 @@
 const BASE_URL = 'https://compass-shop-test.herokuapp.com';
-const collections = ['exercise', 'running', 'sneakers', 'sport', 'swim - equipment'];
+const collections = ['exercise', 'running', 'sneakers', 'sport', 'Equipment'];
 const categories = ['featured', 'top', 'women', 'children', 'men'];
 const sideColl = [
   'All', 'Exercise', 'Girls', 'Running', 'Ski', 'Ski Jacket', 'Sneakers', 'Sport', 'Swim Equipment',

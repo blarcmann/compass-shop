@@ -19,7 +19,7 @@ export class ProductDetails extends Component {
     this.setState({ id })
   }
   render() {
-    const paths = ['product'];
+    const paths = ['shop', 'product'];
     const imgs = ['a', 'b', 'c'];
     const { product, addToCart } = this.props;
     if (!this.props.product) return <Loader loading={this.state.loading} />
